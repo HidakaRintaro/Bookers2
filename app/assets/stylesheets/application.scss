@@ -15,3 +15,13 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+a:hover {
+  background-color: black;
+}
+a:visited {
+  color: #666;
+}
+.field, .actions {
+  margin-bottom: 10px;
+}
