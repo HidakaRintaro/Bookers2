@@ -1,15 +1,31 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Bookers2</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
-    <%= yield %>
-  </body>
-</html>
+<div>
+  <ul>
+    <% if user_signed_in? %>
+      <li>
+        <%= link_to 'Home',  %>
+      </li>
+      <li>
+        <%= link_to 'Users',  %>
+      </li>
+      <li>
+        <%= link_to 'Books',  %>
+      </li>
+      <li>
+        <%= link_to 'logout',  %>
+      </li>
+    <% else %>
+      <li>
+        <%= link_to 'Home',  %>
+      </li>
+      <li>
+        <%= link_to 'About',  %>
+      </li>
+      <li>
+        <%= link_to 'sign up',  %>
+      </li>
+      <li>
+        <%= link_to 'login',  %>
+      </li>
+    <% end %>
+  </ul>
+</div>
