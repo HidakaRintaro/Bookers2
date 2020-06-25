@@ -1,31 +1,59 @@
-<div>
-  <ul>
-    <% if user_signed_in? %>
-      <li>
-        <%= link_to 'Home',  %>
-      </li>
-      <li>
-        <%= link_to 'Users',  %>
-      </li>
-      <li>
-        <%= link_to 'Books',  %>
-      </li>
-      <li>
-        <%= link_to 'logout',  %>
-      </li>
-    <% else %>
-      <li>
-        <%= link_to 'Home',  %>
-      </li>
-      <li>
-        <%= link_to 'About',  %>
-      </li>
-      <li>
-        <%= link_to 'sign up',  %>
-      </li>
-      <li>
-        <%= link_to 'login',  %>
-      </li>
-    <% end %>
-  </ul>
-</div>
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookers</title>
+</head>
+
+  <body>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <nav class="nav navbar-nav navbar-left"><span style="color: white; font-size: 20px;">Bookers</span></nav>
+        <nav>
+          <ul class="nav navbar-nav navbar-right" style="font-size: 13px">
+            <% if user_signed_in? %>
+              <li>
+                <%= link_to ' Home', '#', class:'glyphicon glyphicon-home' %>
+              </li>
+              <li>
+                <%= link_to ' Users', '#' %>
+              </li>
+              <li>
+                <%= link_to ' Books', '#' %>
+              </li>
+              <li>
+                <%= link_to ' logout', '#' %>
+              </li>
+            <% else %>
+              <li>
+                <%= link_to ' Home', '#', class:'glyphicon glyphicon-home' %>
+              </li>
+              <li>
+                <%= link_to ' About', 'http://localhost:3000/home/about', class:'glyphicon glyphicon-link' %>
+              </li>
+              <li>
+                <%= link_to ' sign up', '#', class:'glyphicon glyphicon-edit' %>
+              </li>
+              <li>
+                <%= link_to ' login', '#', class:'glyphicon glyphicon-log-in' %>
+              </li>
+            <% end %>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <%= yield %>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-3 col-xs-offset-9">
+            <p>CopyRight Infratop.inc</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
