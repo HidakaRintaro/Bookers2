@@ -1,0 +1,22 @@
+<p class="text-success"><%= flash[:notice] %></p>
+
+<!-- _new.html.erbの読込 -->
+<%= render 'books/new', book: @book %>
+
+<div class="container">
+  <h2>Books</h2>
+  <table>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Opinion</th>
+    </tr>
+    <% @books.each do |book| %>
+    <tr>
+      <td><%= attachment_image_tag  %></td>
+      <td><%= book.title %></td>
+      <td><%= book.body %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>

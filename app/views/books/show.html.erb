@@ -1,0 +1,16 @@
+<!-- _new.html.erbの読込 -->
+<%= render 'books/new', book: @book %>
+
+<div class="container">
+  <h2>Book detail</h2>
+  <table>
+    <tr>
+      <td>
+        <%= attachment_image_tag  %>
+        <%=  %>
+      </td>
+      <td><%= @book.title %></td>
+      <td><%= @book.body %></td>
+    </tr>
+  </table>
+</div>
