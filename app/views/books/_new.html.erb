@@ -1,16 +1,14 @@
-<div class="containter">
-  <h2>New Book</h2>
-  <%= form_for(book) do |f| %>
-    <div class="field row">
-      <%= f.label :title, "Title" %>
-      <%= f.text_field :title, class:'col-xs-12' %>
-    </div>
-    <div class="field row">
-      <%= f.label :body, "Opinion" %>
-      <%= f.text_area :body, class:'col-xs-12' %>
-    </div>
-    <div class="submit row">
-      <%= f.submit 'Create Book', class:'btn btn-primary col-xs-12' %>
-    </div>
-  <% end %>
-</div>
+<h2>New book</h2>
+<%= form_for(book) do |f| %>
+  <div class="field row">
+    <%= f.label :title, "Title" %>
+    <%= f.text_field :title, class:'col-xs-12' %>
+  </div>
+  <div class="field row">
+    <%= f.label :body, "Opinion" %>
+    <%= f.text_area :body, class:'col-xs-12' %>
+  </div>
+  <div class="submit row">
+    <%= f.submit 'Create Book', class:'btn btn-primary col-xs-12' %>
+  </div>
+<% end %>

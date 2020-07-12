@@ -1,0 +1,30 @@
+<div class="container" style="margin-top: 70px">
+  <h1>User info</h1>
+  <%= form_for(@user) do |f| %>
+    <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h3><%= @user.errors.count %> error prohibited this obj from being saved:</h3>
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+    <% end %>
+    <div class="field">
+      <%= f.label :name, 'Name' %>
+      <%= f.text_field :name, class:'' %>
+    </div>
+    <div class="field">
+      <%= f.label :profile_image, 'Image' %>
+      <%= f.attachment_field :profile_image %>
+    </div>
+    <div class="field">
+      <%= f.label :introduction, 'Introduction' %>
+      <%= f.text_area :introduction, class:'' %>
+    </div>
+    <div>
+      <%= f.submit 'Update User', class:'' %>
+    </div>
+  <% end %>
+</div>
